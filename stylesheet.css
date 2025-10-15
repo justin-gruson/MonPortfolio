@@ -1,8 +1,148 @@
-.bulleInfo{
-    background-color:#3B82F6 ;
+body{
+    background-color: white;
+    border-radius: 15%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    margin: 10px;   
+    flex-direction: column;
+
 }
 
-body{
-    background-color: #A0C2C4;
-    border-radius: 15%;
+.bulleinfo{
+    background-color:white ;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.moi{
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #3B82F6;
+    border-radius: 10px;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    justify-content: space-between;
+}
+
+
+.parcours{
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #3B82F6;
+    border-radius: 10px;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+    margin: 10px;
+}
+
+.contacts{
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #3B82F6;
+    border-radius: 10px;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    align-items: center;
+    gap: 20px;             
+    padding: 20px;
+    
+}
+
+.skills{
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #3B82F6;
+    border-radius: 10px;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+}
+
+.ensavoirplus {
+  position: absolute;
+  bottom: 10px;  
+  left: 20px;
+}
+
+.photoMoi{
+    width: 120px;
+  height: auto;
+  border-radius: 50px;
+}
+
+.imageTelephone{
+    width: 40px;
+  height: auto;
+  border-radius: 50px;
+}
+
+.imageMail{
+     width: 40px;
+  height: auto;
+  border-radius: 50px;
+}
+
+.imageLinkedin{
+     width: 40px;
+  height: auto;
+  border-radius: 50px;
+}
+
+.imageGitHub{
+    width: 40px;
+  height: auto;
+  border-radius: 50px;
+}
+
+
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #3B82F6 ;
+padding: 15px 30px;
+border-radius: 10px;
+}
+
+
+.logo {
+color: white;
+font-size: 30px;
+}
+
+
+.nav-links {
+list-style: none;
+display: flex;
+}
+
+
+.nav-links li {
+margin-left: 30px;
+}
+
+
+.nav-links a {
+color: white;
+font-weight: bold;
+transition: color 0.3s;
+}
+
+
+.nav-links a:hover {
+color: black;
 }
