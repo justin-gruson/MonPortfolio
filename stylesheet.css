@@ -1,7 +1,5 @@
-/* --- Importation d'une police plus moderne --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* --- Styles Globaux --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,150 +7,195 @@
 }
 
 body {
-    background-color: #f4f4f9; /* Fond légèrement gris pour un meilleur contraste */
-    font-family: 'Poppins', sans-serif; /* Nouvelle police */
+    background-color: #f4f4f9; 
+    font-family: 'Poppins', sans-serif; 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding: 20px; /* Remplacer le margin par du padding */
+    padding: 20px; 
+    line-height: 1.6;
 }
 
-/* --- Barre de Navigation (légèrement ajustée) --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #3B82F6;
+    background: linear-gradient(135deg, #3B82F6, #1E40AF);
     padding: 15px 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20px;
+    z-index: 100;
 }
 
 .logo {
     color: white;
-    font-size: 24px; /* Taille ajustée */
+    font-size: 24px; 
     font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px; /* Utiliser gap pour l'espacement */
-}
-
-.nav-links li {
-    margin-left: 0; /* Supprimé pour utiliser gap */
+    gap: 25px; 
 }
 
 .nav-links a {
     color: white;
     font-weight: 600;
-    text-decoration: none; /* Toujours une bonne pratique */
-    transition: color 0.3s ease; /* Transition douce */
+    text-decoration: none; 
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 6px;
 }
 
 .nav-links a:hover {
-    color: #eeeeee;
-    text-shadow: 0 0 5px rgba(0,0,0,0.3);
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
-/* --- Conteneur principal des cartes --- */
 .bulleinfo {
-    background-color: transparent; /* Pas besoin de couleur ici */
+    background-color: transparent; 
     margin-top: 30px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne sur les petits écrans */
-    gap: 20px; /* Espace uniforme entre les cartes */
+    flex-wrap: wrap; 
+    gap: 25px; 
+    padding: 20px 0;
 }
 
-/* --- Style commun à toutes les cartes --- */
 .moi, .parcours, .contacts, .skills {
-    background-color: #3B82F6;
+    background: linear-gradient(145deg, #3B82F6, #2563EB);
     color: white;
-    padding: 20px;
-    width: 280px;
-    min-height: 350px; /* Hauteur minimale pour un alignement visuel */
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 25px 20px;
+    width: 300px;
+    min-height: 380px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre le contenu horizontalement */
+    align-items: center; 
     text-align: center;
-    position: relative; /* Indispensable pour positionner le bouton */
+    position: relative;
+    overflow: hidden;
 }
 
-/* --- Effet de survol pour les cartes --- */
+.moi::before, .parcours::before, .contacts::before, .skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.6s;
+}
+
+
 .moi:hover, .parcours:hover, .contacts:hover, .skills:hover {
-    transform: translateY(-10px); /* Soulève la carte un peu plus */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.25);
 }
 
-/* --- Bouton "En savoir plus" --- */
 .ensavoirplus {
     position: absolute;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); /* Centrage parfait du bouton */
+    transform: translateX(-50%);    
     background-color: white;
     color: #3B82F6;
-    padding: 10px 20px;
-    border-radius: 50px; /* Pour un look "pilule" */
+    padding: 12px 25px;
+    border-radius: 50px; 
     font-weight: 600;
     font-size: 14px;
-    cursor: pointer; /* Indique que c'est cliquable */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    width: 80%; /* Largeur du bouton */
+    cursor: pointer; 
+    transition: all 0.3s ease;
+    width: 85%;
+    border: 2px solid transparent;
+    text-decoration: none;
+    display: block;
 }
 
-.ensavoirplus:hover {
-    background-color: #f0f0f0; /* Légère variation au survol */
-    color: #296dc7;
-}
 
-/* --- Styles spécifiques aux images et listes --- */
+
 .photoMoi {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* 50% garantit un cercle parfait */
-    border: 3px solid white;
-    margin-bottom: 15px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%; 
+    border: 4px solid white;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Alignement dans la carte "Contacts" */
 .contacts ul {
-    list-style: none; /* Supprime les puces de la liste */
+    list-style: none; 
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* Espace entre les éléments de contact */
+    gap: 15px; 
+    width: 100%;
+}
+
+.contacts li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.contacts li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .contacts a {
     color: white;
     font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* Style commun aux icônes */
+.contacts a:hover {
+    color: #E5E7EB;
+    text-decoration: underline;
+}
+
 .imageTelephone, .imageMail, .imageLinkedin, .imageGitHub {
-    width: 30px; /* Taille réduite pour un look plus fin */
-    height: 30px;
-    margin-top: 5px; /* Petit espace au-dessus */
+    width: 32px; 
+    height: 32px;
+    flex-shrink: 0;
 }
 
-/* Style des listes de compétences */
 .skills ul {
     list-style: none;
     padding: 0;
-    margin-top: 15px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 .skills ul li {
-    margin-bottom: 8px;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 5px 10px;
-    border-radius: 5px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.25));
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+}
+
+.skills ul li:hover {
+    transform: translateX(8px);
+}
+
+.moi:hover::before, .parcours:hover::before, .contacts:hover::before, .skills:hover::before {
+    left: 100%;
 }
