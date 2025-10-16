@@ -1,148 +1,154 @@
-body{
-    background-color: white;
-    border-radius: 15%;
-    font-family: Arial, sans-serif;
-    display: flex;
-    margin: 10px;   
-    flex-direction: column;
+/* --- Importation d'une police plus moderne --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* --- Styles Globaux --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.bulleinfo{
-    background-color:white ;
+body {
+    background-color: #f4f4f9; /* Fond légèrement gris pour un meilleur contraste */
+    font-family: 'Poppins', sans-serif; /* Nouvelle police */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px; /* Remplacer le margin par du padding */
+}
+
+/* --- Barre de Navigation (légèrement ajustée) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3B82F6;
+    padding: 15px 30px;
     border-radius: 10px;
-    margin: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    color: white;
+    font-size: 24px; /* Taille ajustée */
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Utiliser gap pour l'espacement */
+}
+
+.nav-links li {
+    margin-left: 0; /* Supprimé pour utiliser gap */
+}
+
+.nav-links a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none; /* Toujours une bonne pratique */
+    transition: color 0.3s ease; /* Transition douce */
+}
+
+.nav-links a:hover {
+    color: #eeeeee;
+    text-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+/* --- Conteneur principal des cartes --- */
+.bulleinfo {
+    background-color: transparent; /* Pas besoin de couleur ici */
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne sur les petits écrans */
+    gap: 20px; /* Espace uniforme entre les cartes */
 }
 
-
-.moi{
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s;
+/* --- Style commun à toutes les cartes --- */
+.moi, .parcours, .contacts, .skills {
     background-color: #3B82F6;
-    border-radius: 10px;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    margin: 10px;
-    justify-content: space-between;
+    color: white;
+    padding: 20px;
+    width: 280px;
+    min-height: 350px; /* Hauteur minimale pour un alignement visuel */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le contenu horizontalement */
+    text-align: center;
+    position: relative; /* Indispensable pour positionner le bouton */
 }
 
-
-.parcours{
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #3B82F6;
-    border-radius: 10px;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
-    margin: 10px;
+/* --- Effet de survol pour les cartes --- */
+.moi:hover, .parcours:hover, .contacts:hover, .skills:hover {
+    transform: translateY(-10px); /* Soulève la carte un peu plus */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
 }
 
-.contacts{
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #3B82F6;
-    border-radius: 10px;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    margin: 10px;
-    align-items: center;
-    gap: 20px;             
-    padding: 20px;
-    
-}
-
-.skills{
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #3B82F6;
-    border-radius: 10px;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    margin: 10px;
-}
-
+/* --- Bouton "En savoir plus" --- */
 .ensavoirplus {
-  position: absolute;
-  bottom: 10px;  
-  left: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);    
+    background-color: white;
+    color: #3B82F6;
+    padding: 10px 20px;
+    border-radius: 50px; 
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 80%; 
 }
 
-.photoMoi{
+.ensavoirplus:hover {
+    background-color: #f0f0f0; 
+    color: #296dc7;
+}
+
+.photoMoi {
     width: 120px;
-  height: auto;
-  border-radius: 50px;
+    height: 120px;
+    border-radius: 50%; 
+    border: 3px solid white;
+    margin-bottom: 15px;
 }
 
-.imageTelephone{
-    width: 40px;
-  height: auto;
-  border-radius: 50px;
+.contacts ul {
+    list-style: none; 
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
 }
 
-.imageMail{
-     width: 40px;
-  height: auto;
-  border-radius: 50px;
+.contacts a {
+    color: white;
+    font-weight: 600;
 }
 
-.imageLinkedin{
-     width: 40px;
-  height: auto;
-  border-radius: 50px;
+.imageTelephone, .imageMail, .imageLinkedin, .imageGitHub {
+    width: 30px; 
+    height: 30px;
+    margin-top: 5px; 
 }
 
-.imageGitHub{
-    width: 40px;
-  height: auto;
-  border-radius: 50px;
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
 }
 
-
-.navbar {
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: #3B82F6 ;
-padding: 15px 30px;
-border-radius: 10px;
-}
-
-
-.logo {
-color: white;
-font-size: 30px;
-}
-
-
-.nav-links {
-list-style: none;
-display: flex;
-}
-
-
-.nav-links li {
-margin-left: 30px;
-}
-
-
-.nav-links a {
-color: white;
-font-weight: bold;
-transition: color 0.3s;
-}
-
-
-.nav-links a:hover {
-color: black;
+.skills ul li {
+    margin-bottom: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
