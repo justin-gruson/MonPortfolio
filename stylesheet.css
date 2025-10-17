@@ -166,6 +166,30 @@ body {
     text-align: center;
 }
 
+/* Parcours */
+.parcours-content {
+    text-align: center;
+}
+
+.parcours-content p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.parcours-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.parcours-content li {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+    padding: 10px 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
 .contact-list {
     display: flex;
     flex-direction: column;
@@ -196,30 +220,6 @@ body {
 .contact-list a:hover {
     color: var(--accent-color);
     text-decoration: underline;
-}
-
-/* Parcours */
-.parcours-content {
-    text-align: center;
-}
-
-.parcours-content p {
-    margin-bottom: 15px;
-    color: #666;
-}
-
-.parcours-content ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.parcours-content li {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
-    padding: 10px 15px;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-color);
 }
 
 .skills-grid {
@@ -259,7 +259,7 @@ body {
     background: linear-gradient(135deg, #10B981, #059669);
 }
 
-/* ----- Section Formulaire de contact ----- */
+/* Formulaire de contact */
 form {
   max-width: 600px;
   margin: 5px auto;
@@ -270,7 +270,6 @@ form {
   border-radius: 20px;
 }
 
-/* Labels */
 form label {
   display: block;
   margin-bottom: 1px;
@@ -291,7 +290,6 @@ form textarea {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Effet focus */
 form input[type="email"]:focus,
 form textarea:focus {
   border-color: #0078ff;
@@ -321,7 +319,7 @@ form button {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Effet hover */
+
 form button:hover {
   background-color: #005fcc;
   transform: scale(1.02);
