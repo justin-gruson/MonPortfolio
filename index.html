@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio - Justin GRUSON</title>
     <link rel="stylesheet" href="stylesheet.css" />
 </head>
@@ -11,59 +13,125 @@
         <h2 class="logo">Justin GRUSON</h2>
         <nav>
             <ul class="nav-links">
-                <li><a href="#parcours">Parcours</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#parcours">Parcours</a></li>
                 <li><a href="#competences">Compétences</a></li>
-                <li><a href="#apropos">Tout sur moi</a></li>
             </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
-    <main class="bulleinfo">
-        <section id="apropos" class="moi">
-            <img src="personne.png" alt="Photo de profil de Justin Gruson" class="photoMoi" />
-            <h3>Mini présentation</h3>
-            <p class="ensavoirplus">En savoir plus sur moi...</p>
+    <main class="container">
+        <section id="presentation" class="card main-card">
+            <div class="profile-header">
+                <img src="personne.png" alt="Photo de Justin Gruson" class="profile-img" />
+                <div class="profile-text">
+                    <h1>Justin GRUSON</h1>
+                    <p class="tagline">Développeur passionné</p>
+                    <p class="search">Je recherche une alternance en développement web</p>
+                </div>
+            </div>
         </section>
 
-        <section id="parcours" class="parcours">
-            <h3>Légère présentation de mon parcours</h3>
-            <p class="ensavoirplus">En savoir plus sur mon parcours...</p>
-        </section>
+        <div class="secondary-cards">
+            <section id="contact" class="card contact-card">
+                <h3>Contact</h3>
+                <ul class="contact-list">
+                    <li>
+                        <img src="telephone.png" alt="Téléphone" class="contact-icon" />
+                        <span>07.68.64.34.98</span>
+                    </li>
+                    <li>
+                        <img src="mail.png" alt="Email" class="contact-icon" />
+                        <span>grusonjustin@gmail.com</span>
+                    </li>
+                    <li>
+                        <img src="linkedin.png" alt="LinkedIn" class="contact-icon" />
+                        <a href="https://www.linkedin.com/in/justin-gruson" target="_blank">LinkedIn</a>
+                    </li>
+                    <li>
+                        <img src="github.png" alt="GitHub" class="contact-icon" />
+                        <a href="https://github.com/justin-gruson" target="_blank">GitHub</a>
+                    </li>
+                    <li>
+                        <form action="https://formspree.io/f/mvgwlrgq" method="POST">
+                            <label>
+                                Votre Nom:
+                                <input type="email" name="email">
+                            </label>
+                            <label>
+                                Votre email:
+                                <input type="email" name="email">
+                            </label>
+                            <label>
+                                Votre message:
+                                <textarea name="message"></textarea>
+                            </label>
+                            <button type="submit">Send</button>
+                            </form>
+                    </li>
+                </ul>
+            </section>
 
-        <section id="contact" class="contacts">
-            <h3>Mes contacts</h3>
-            <ul>
-                <li>
-                    <img src="telephone.png" alt="Téléphone" class="imageTelephone" />
-                    07.68.64.34.98
-                </li>
-                <li>
-                    <img src="mail.png" alt="Email" class="imageMail" />
-                    grusonjustin@gmail.com
-                </li>
-                <li>
-                    <img src="linkedin.png" alt="LinkedIn" class="imageLinkedin" />
-                    <a href="https://www.linkedin.com/in/justin-gruson">Mon LinkedIn</a>
-                </li>
-                <li>
-                    <img src="github.png" alt="GitHub" class="imageGitHub" />
-                    <a href="https://github.com/justin-gruson">Mon GitHub</a>
-                </li>
-            </ul>
-        </section>
+            <section id="parcours" class="card parcours-card">
+                <h3>Parcours</h3>
+                <div class="parcours-content">
+                    <p>Mon parcours académique et professionnel dans le développement web.</p>
+                    <ul>
+                        <li>Formation Développeur Web</li>
+                        <li>Projets personnels</li>
+                        <li>Expériences professionnelles</li>
+                    </ul>
+                </div>
+            </section>
 
-        <section id="competences" class="skills">
-            <h3>Quelques-unes de mes compétences</h3>
-            <ul>
-                <li>À l'écoute</li>
-                <li>Travail d'équipe</li>
-                <li>Concentré</li>
-                <li>HTML-CSS</li>
-                <li>SQL</li>
-                <li>Python</li>
-            </ul>
-        </section>
+            <section id="competences" class="card skills-card">
+                <h3>Compétences</h3>
+                <div class="skills-grid">
+                    <div class="hard-skills">
+                        <h4>Hard Skills</h4>
+                        <ul>
+                            <li>HTML-CSS</li>
+                            <li>Python</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="soft-skills">
+                        <h4>Soft Skills</h4>
+                        <ul>
+                            <li>À l'écoute</li>
+                            <li>Travail d'équipe</li>
+                            <li>Créatif</li>
+                            <li>Adaptable</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
+
+    <script>
+        // Menu burger
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+            });
+        });
+    </script>
 </body>
+
 </html>
