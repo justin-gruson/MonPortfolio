@@ -136,7 +136,7 @@ body {
 .search {
     font-size: 0.95rem;
     opacity: 0.8;
-    font-style: italic;
+    font-style:inherit;
 }
 
 .secondary-cards {
